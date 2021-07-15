@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewTabComponent } from './view-tab/view-tab.component';
 import { NavigationHeaderComponent } from './navigation-header/navigation-header.component';
+import { HomeViewComponent } from './home-view/home-view.component';
+import { CreateViewComponent } from './create-view/create-view.component';
+import { EditViewComponent } from './edit-view/edit-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewTabComponent,
-    NavigationHeaderComponent
+    NavigationHeaderComponent,
+    HomeViewComponent,
+    CreateViewComponent,
+    EditViewComponent
   ],
   imports: [
     BrowserModule,

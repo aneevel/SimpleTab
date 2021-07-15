@@ -1,11 +1,15 @@
 <ul ngbNav #nav="ngbNav" class="nav-tabs">
     <li ngbNavItem>
         <a ngbNavLink>Home</a>
-        <ng-template ngbNavContent></ng-template>
+        <ng-template ngbNavContent>
+            <app-home-view></app-home-view>
+        </ng-template>
     </li>
     <li ngbNavItem>
         <a ngbNavLink>Create</a>
-        <ng-template ngbNavContent></ng-template>
+        <ng-template ngbNavContent>
+            <app-create-view></app-create-view>
+        </ng-template>
     </li>
     <li ngbNavItem>
         <a ngbNavLink>View</a>
@@ -15,7 +19,9 @@
     </li>
     <li ngbNavItem>
         <a ngbNavLink>Edit</a>
-        <ng-template ngbNavContent></ng-template>
+        <ng-template ngbNavContent>
+            <app-edit-view></app-edit-view>
+        </ng-template>
     </li>
 </ul>
 <div [ngbNavOutlet]="nav"></div>
