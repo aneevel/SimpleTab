@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ViewTabComponent } from './view-tab/view-tab.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ViewTabComponent
   ],
   imports: [
     BrowserModule,
