@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewTabComponent } from './view-tab/view-tab.component';
+import { NavigationHeaderComponent } from './navigation-header/navigation-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewTabComponent
+    ViewTabComponent,
+    NavigationHeaderComponent
   ],
   imports: [
     BrowserModule,
