@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+const vextab = require('vextab');
 
 @Component({
   selector: 'app-view-tab',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewTabComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
