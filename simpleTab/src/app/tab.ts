@@ -1,5 +1,9 @@
 export interface Tab {
 
     notes: any;
-    stave: any;
+    staves: any[];
+    title: string;
+    composer: string;
+    transcriber: string;
+    bpm: number;
 }
