@@ -15,13 +15,17 @@ export class CreateViewComponent implements OnInit {
   ) {
     this.createTabForm = this.formBuilder.group({
       title: null,
-      composer: null,
+      artist: null,
       transcriber: null,
       bpm: ['', Validators.pattern("^[0-9]*$")]
     })
   }
 
   ngOnInit(): void {
+  }
+
+  onSubmit() {
+    console.log("Form submitted!");
   }
 
 }

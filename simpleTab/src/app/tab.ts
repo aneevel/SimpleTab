@@ -3,7 +3,7 @@ export interface Tab {
     notes: any;
     staves: any[];
     title: string;
-    composer: string;
+    artist: string;
     transcriber: string;
     bpm: number;
 }
