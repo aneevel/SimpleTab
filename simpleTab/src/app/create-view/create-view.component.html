@@ -1,39 +1,40 @@
 <form class="create-tab-form" [formGroup]="createTabForm">
+    
+    <label for="title">
+        Song Title
+    </label>
     <input type="text"
         id="title"
         formControlName="title"
         required
     >
-    <label for="title">
-        Song Title
-    </label>
 
+    <label for="title">
+        Artist
+    </label>
     <input type="text"
         id="artist"
         formControlName="artist"
         required
     >
-    <label for="title">
-        Artist
-    </label>
 
+    <label for="transcriber">
+        Transcriber
+    </label>
     <input type="text"
         id="transcriber"
         formControlName="transcriber"
         required
     >
-    <label for="transcriber">
-        Transcriber
-    </label>
 
+    <label for="bpm">
+        BPM
+    </label>
     <input type="text"
         id="bpm"
         formControlName="bpm"
         required
     >
-    <label for="bpm">
-        BPM
-    </label>
 
     <button [disabled]="!createTabForm.valid" (click)="onSubmit()" color="primary">Create Tab</button>
 
