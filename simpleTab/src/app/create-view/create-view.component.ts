@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-view',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateViewComponent implements OnInit {
 
-  constructor() { }
+  createTabForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+    this.createTabForm = this.formBuilder.group({
+      title: null,
+      composer: null,
+      transcriber: null,
+      bpm: ['', Validators.pattern("^[0-9]*$")]
+    })
+  }
 
   ngOnInit(): void {
   }
