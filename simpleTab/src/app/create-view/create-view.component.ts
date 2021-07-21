@@ -37,8 +37,8 @@ export class CreateViewComponent implements OnInit {
   }
 
   onSubmit() {
-    this.navigationSharedService.change(4);
     this.currentTabService.setTab(this.createTabService.createTab(this.createTabForm));
+    this.navigationSharedService.change(4);
   }
 
 }
