@@ -6,12 +6,10 @@ import { Tab } from './tab';
 })
 export class CurrentTabService {
 
-  tab: Tab;
+  tab: any;
 
   constructor() {
-    this.tab = new Tab(
-      [], [], "", "", "", 0
-    ); 
+    this.tab = undefined;
    }
 
    setTab(tab: Tab) {
