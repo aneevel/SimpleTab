@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CreateTabService } from '../create-tab.service';
+import { CurrentTabService } from '../current-tab.service';
 import { NavigationSharedService } from '../navigation-shared.service';
 
 @Component({
@@ -13,11 +14,13 @@ export class CreateViewComponent implements OnInit {
   createTabForm: FormGroup;
   navigationSharedService: NavigationSharedService;
   createTabService: CreateTabService;
+  currentTabService: CurrentTabService;
 
   constructor(
     private formBuilder: FormBuilder,
     navigationSharedService: NavigationSharedService,
-    createTabService: CreateTabService
+    createTabService: CreateTabService,
+    currentTabService: CurrentTabService
   ) {
     this.createTabForm = this.formBuilder.group({
       title: null,
@@ -27,6 +30,7 @@ export class CreateViewComponent implements OnInit {
     })
     this.navigationSharedService = navigationSharedService;
     this.createTabService = createTabService;
+    this.currentTabService = currentTabService;
   }
 
   ngOnInit(): void {
@@ -34,6 +38,7 @@ export class CreateViewComponent implements OnInit {
 
   onSubmit() {
     this.navigationSharedService.change(4);
+    this.currentTabService.setTab(this.createTabService.createTab(this.createTabForm));
   }
 
 }
