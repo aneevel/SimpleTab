@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationSharedService } from '../navigation-shared.service';
 
 @Component({
   selector: 'app-navigation-header',
@@ -8,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationHeaderComponent implements OnInit {
 
   activeId: number = 1; 
+  sharedNavService: NavigationSharedService;
 
-  constructor() { }
+  constructor(sharedNavService: NavigationSharedService) {
+    this.sharedNavService = sharedNavService;
+   }
 
   ngOnInit(): void {
+    this.sharedNavService.getEmittedValue().subscribe(
+      value => this.activeId = value
+    );
   }
 
 }

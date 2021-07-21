@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NavigationSharedService } from '../navigation-shared.service';
 
 @Component({
   selector: 'app-create-view',
@@ -9,9 +10,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class CreateViewComponent implements OnInit {
 
   createTabForm: FormGroup;
+  navService: NavigationSharedService;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private navigationSharedService: NavigationSharedService
   ) {
     this.createTabForm = this.formBuilder.group({
       title: null,
@@ -19,13 +22,14 @@ export class CreateViewComponent implements OnInit {
       transcriber: null,
       bpm: ['', Validators.pattern("^[0-9]*$")]
     })
+    this.navService = navigationSharedService;
   }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log("Form submitted!");
+    this.navService.change(4);
   }
 
 }
