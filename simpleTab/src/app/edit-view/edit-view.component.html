@@ -1,11 +1,13 @@
 <div *ngIf="this.hasCurrentTab(); else elseBlock">
-    <h3>Current Tab</h3>
-    <div id="canvas">
-        
-    </div>
+    <h3>{{this.currentTab.title}} by {{this.currentTab.artist}}</h3>
+    <h4>{{this.currentTab.transcriber}}</h4>
+    <p>Rhythm: {{this.currentTab.bpm}} BPM</p>
 </div>
 <ng-template #elseBlock>
     <p>You have not selected a tab yet. Please create one via the "Create" page, or select 
         an already existing tab to edit via the "View" page.
     </p>
 </ng-template>
+<div id="canvas">
+        
+</div>

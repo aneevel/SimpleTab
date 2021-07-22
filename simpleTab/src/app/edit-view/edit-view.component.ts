@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentTabService } from '../current-tab.service';
+import { Tab } from '../tab';
 import Vex from "vexflow";
 
 @Component({
@@ -10,33 +11,36 @@ import Vex from "vexflow";
 export class EditViewComponent implements OnInit {
 
   VF = Vex.Flow;
-  vexRenderer: any;
-  system: any;
+  vexRenderer?: Vex.Flow.Renderer;
+  system?: Vex.Flow.System;
   currentTabService: CurrentTabService;
   currentTab: any;
+  display?: HTMLElement;
 
   constructor(currentTabService: CurrentTabService) {
     this.currentTabService = currentTabService;
-   }
+
+    }
 
   ngOnInit(): void {
 
     if (this.hasCurrentTab()) {
 
       this.currentTab = this.currentTabService.getTab();
-      let display = document.getElementById("canvas")!;
-      this.vexRenderer = new this.VF.Renderer(display, this.VF.Renderer.Backends.SVG);
-
-      this.vexRenderer.resize(600, 600);
-      const context = this.vexRenderer.getContext();
-
-      this.VF.Formatter.FormatAndDraw(context, this.currentTab.staves[0], this.currentTab.notes);
+      this.createDisplay();
     }
 
   }
 
   hasCurrentTab(): boolean {
     return (this.currentTabService.getTab() != null)
+  }
+
+  createDisplay() {
+    this.display = document.getElementById("canvas")!;
+
+    this.vexRenderer = new this.VF.Renderer(this.display, this.VF.Renderer.Backends.SVG)!;
+
   }
 
 }
