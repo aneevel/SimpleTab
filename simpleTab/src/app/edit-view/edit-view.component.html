@@ -1,1 +1,11 @@
-<p>edit-view works!</p>
+<div *ngIf="this.hasCurrentTab(); else elseBlock">
+    <h3>Current Tab</h3>
+    <div id="canvas">
+        
+    </div>
+</div>
+<ng-template #elseBlock>
+    <p>You have not selected a tab yet. Please create one via the "Create" page, or select 
+        an already existing tab to edit via the "View" page.
+    </p>
+</ng-template>

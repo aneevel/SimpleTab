@@ -1,23 +1,23 @@
-<ul ngbNav #nav="ngbNav" [(activeId)]="activeId" class="nav-tabs">
-    <li [ngbNavItem]="1">
+<ul ngbNav #nav="ngbNav" [(activeId)]=activeId class="nav-tabs">
+    <li [ngbNavItem]=1>
         <a ngbNavLink>Home</a>
         <ng-template ngbNavContent>
             <app-home-view></app-home-view>
         </ng-template>
     </li>
-    <li [ngbNavItem]="2">
+    <li [ngbNavItem]=2>
         <a ngbNavLink>Create</a>
         <ng-template ngbNavContent>
             <app-create-view></app-create-view>
         </ng-template>
     </li>
-    <li [ngbNavItem]="3">
+    <li [ngbNavItem]=3>
         <a ngbNavLink>View</a>
         <ng-template ngbNavContent>
             <app-view-tab></app-view-tab>
         </ng-template>
     </li>
-    <li [ngbNavItem]="4">
+    <li [ngbNavItem]=4>
         <a ngbNavLink>Edit</a>
         <ng-template ngbNavContent>
             <app-edit-view></app-edit-view>
