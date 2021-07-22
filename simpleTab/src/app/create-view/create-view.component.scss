@@ -1,4 +1,15 @@
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
 form {
+
+    display: flex;
+    flex-direction: column;
+    width: 65vw;
+    margin: auto;
+    padding-top: 20px;
     
     label {
         margin: 2px;
@@ -8,10 +19,12 @@ form {
     input {
         margin: 2px;
         padding: 2px;
+        width: 10vw;
     }
 
     button {
         margin: 4px;
         padding: 4px;
+        width: 5vw;
     }
 }
